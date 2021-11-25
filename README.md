@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Viewing the TZ Interview project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+You can view this project live online at [https://jamesfinn180.github.io/pointillism/](https://jamesfinn180.github.io/pointillism/).
 
-## Available Scripts
+You can view the non-built/undeployed code on the **initialize** branch. The important code is in **App.js** inside the **src** folder [https://github.com/jamesfinn180/pointillism/tree/initialize/src](https://github.com/jamesfinn180/pointillism/tree/initialize/src)
 
-In the project directory, you can run:
+## Features
 
-### `yarn start`
+The project was built using create-react-app with JavaScript and CSS. Aside from React itself there were no external libraries used. The project features:
+* Connection to the GitHub gists API (https://docs.github.com/en/rest/reference/gists#list-all-public-gists).
+* Paged-infinite scrolling list featuring owner avatars and file names of gists.
+* Fade in and out of owner avatar when gist is clicked from the list.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Breakdown
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+For ease of reviewing the project, the components were not split into separate external modules. Instead all 5 of them appear in the main App.js file. They include one class component and 4 functional components for ease of maintenance and reusability.
+* __App__ component contains state which handles fetching data from the GitHub API and storing it. Some basic throttling was used here in the getGists() function to prevent multiple calls to the API triggered by the scrolling event.
+* __List__ component contains the scrollList() function that keeps track of the user's scroll position on the site and calls getGists() from its parent when appropriate. React hooks are used here to show and hide the main avatar image when a ListItem is clicked.
+* __ListItem__ component is created for each gist that is fetched from the API. The file names and owner avatar are fed to this component from List.
+* __ListItemLoading__ is a simple pure functional component that renders a loading icon only when __App__ is fetching from GitHub.
+* __Avatar__ is a fixed centered image of the owner's avatar which appears when a user clicks a ListItem. 
 
-### `yarn test`
+## Launching the project locally
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Navigate to the project folder using Command Prompt (Windows) or Terminal (Mac).
 
-### `yarn build`
+Run `npm install` to download all of the project dependencies.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Run `yarn start` to launch the app in development mode. After a few moments this should load up [http://localhost:3000](http://localhost:3000) in your browser where you can view the project.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+*This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).*
