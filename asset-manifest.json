@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/pointillism/static/css/main.d869dca1.chunk.css",
+    "main.js": "/pointillism/static/js/main.b7163237.chunk.js",
+    "main.js.map": "/pointillism/static/js/main.b7163237.chunk.js.map",
+    "runtime-main.js": "/pointillism/static/js/runtime-main.725520c9.js",
+    "runtime-main.js.map": "/pointillism/static/js/runtime-main.725520c9.js.map",
+    "static/js/2.f79d63fe.chunk.js": "/pointillism/static/js/2.f79d63fe.chunk.js",
+    "static/js/2.f79d63fe.chunk.js.map": "/pointillism/static/js/2.f79d63fe.chunk.js.map",
+    "static/js/3.387bebd6.chunk.js": "/pointillism/static/js/3.387bebd6.chunk.js",
+    "static/js/3.387bebd6.chunk.js.map": "/pointillism/static/js/3.387bebd6.chunk.js.map",
+    "index.html": "/pointillism/index.html",
+    "static/css/main.d869dca1.chunk.css.map": "/pointillism/static/css/main.d869dca1.chunk.css.map",
+    "static/js/2.f79d63fe.chunk.js.LICENSE.txt": "/pointillism/static/js/2.f79d63fe.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.725520c9.js",
+    "static/js/2.f79d63fe.chunk.js",
+    "static/css/main.d869dca1.chunk.css",
+    "static/js/main.b7163237.chunk.js"
+  ]
+}
